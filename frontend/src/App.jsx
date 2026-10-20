@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
   const fetchBloodData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/blood')
+      const response = await fetch('https://bloodlink-gb0y.onrender.com/api/blood')
 
       if (!response.ok) {
         throw new Error('Failed to fetch blood inventory')
@@ -76,7 +76,7 @@ function App() {
   useEffect(() => {
   const fetchDonors = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/donors')
+      const response = await fetch('https://bloodlink-gb0y.onrender.com/api/donors')
 
       if (!response.ok) {
         throw new Error('Failed to fetch donors')
@@ -99,7 +99,7 @@ function App() {
   useEffect(() => {
   const fetchEmergencyRequests = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/emergency')
+      const response = await fetch('https://bloodlink-gb0y.onrender.com/api/emergency')
 
       if (!response.ok) {
         throw new Error('Failed to fetch emergency requests')
@@ -180,7 +180,7 @@ function App() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/donors', {
+      const response = await fetch('https://bloodlink-gb0y.onrender.com/api/donors', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -221,7 +221,7 @@ function App() {
   }
 
   try {
-    const response = await fetch('http://localhost:5000/api/emergency', {
+    const response = await fetch('https://bloodlink-gb0y.onrender.com/api/emergency', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -258,7 +258,7 @@ function App() {
   const units = Math.max(0, Number(value))
 
   try {
-    const response = await fetch(`http://localhost:5000/api/blood/${encodeURIComponent(group)}`, {
+    const response = await fetch(`https://bloodlink-gb0y.onrender.com/api/blood/${encodeURIComponent(group)}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -287,7 +287,7 @@ function App() {
 
   async function updateRequestStatus(id, status) {
   try {
-    const response = await fetch(`http://localhost:5000/api/emergency/${id}`, {
+    const response = await fetch(`https://bloodlink-gb0y.onrender.com/api/emergency/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
